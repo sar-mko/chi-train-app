@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10+Charted&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6f34e3d583.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <title>Results</title>
+</head>
+<body class="oswald-reg">
+    <nav>
+        <div>
+            <span class="fa-solid fa-train-subway" src="#" alt="logo"> </span>
+            <h4><a href="/">Chi-Train Tracker</a></h4>
+        </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/search">Find Routes</a></li>
+            <li><a href="#">Stations</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Your stations results</h1>
+     </header>
+     
+     <main class="main--results">
+        <h2> <%= data.ctatt.eta[0].staNm %> Station </h2>
+        <section class="results--list list-row">
+           <% for(let i = 0 ; i < data.ctatt.eta.length ; i++){ %>
+
+            <h5>Platform: <%= data.ctatt.eta[i].stpDe %></h5>
+                <div class=' results--cont'>
+                    <div class="<%= data.ctatt.eta[i].rt.toLowerCase()%> results--L">
+                            <p>
+                            route line:<%= data.ctatt.eta[i].rt %></p>  
+                            <p> train #<%= data.ctatt.eta[i].rn %></p>
+                    </div>
+                    <div class="results--R">
+                        <h4>Headed to : <%= data.ctatt.eta[i].destNm %> </h4>
+                      
+                        <p> <%= data.ctatt.eta[i].isApp === '0' ? 'Not Approaching' : 'Approaching'   %> </p>
+                        <span>Time: <%= data.ctatt.eta[i].arrT %></span>
+                        <span><%=moment().to(data.ctatt.eta[i].arrT) %></span>
+                    </div>
+                </div>
+    
+           <%} %>
+            </section>
+     </main>
+     <footer>
+        <ul>
+            <li><a href="/">Info</a></li>
+            <li><a href="/">Contact Us</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/">Home</a></li>
+        </ul>
+    </footer>
+</body>
+</html>
