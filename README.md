@@ -1,4 +1,4 @@
-# Wildflower App
+# Chi-Train App
 
 A website to access the schedule of Chicago's, "The L", train system.
 
