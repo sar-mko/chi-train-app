@@ -14,6 +14,11 @@ This app is meant to be a resource to search for through the Chicago Train syste
 * Moment-Timezone
 * EJS
 
+## Preview
+
+[Live Demo](https://chi-train.onrender.com)
+<img width="1149" alt="Screenshot 2024-10-11 at 9 30 29 PM" src="https://github.com/user-attachments/assets/4810d083-e186-41b8-8b9b-8a3d5b7c748a">
+
 
 ## Future Development
 
